@@ -1,0 +1,24 @@
+[ 2026-06-12 15:36:07,302] 161 numexpr.utils -INFO - NumExpr defaulting to 4 threads.
+[ 2026-06-12 15:36:09,430] 31 root -INFO - Data Ingestion Started
+[ 2026-06-12 15:36:09,430] 120 root -INFO - Started Data Ingestion
+[ 2026-06-12 15:36:09,430] 33 root -INFO - Reading data from MongoDB database: ADITYAAI, collection: NetworkData
+[ 2026-06-12 15:36:11,814] 48 root -INFO - Fetched 1000 rows and 31 columns from MongoDB
+[ 2026-06-12 15:36:11,822] 72 root -INFO - Data exported to feature store: Artifacts\06_12_2026_15_36_07\data_ingestion\feature_store\phishingData.csv
+[ 2026-06-12 15:36:11,824] 89 root -INFO - Performed train-test split on the dataframe
+[ 2026-06-12 15:36:12,035] 111 root -INFO - Exported train and test datasets successfully
+[ 2026-06-12 15:36:12,035] 133 root -INFO - Data Ingestion Completed
+[ 2026-06-12 15:36:12,035] 48 root -INFO - Data Ingestion Completed
+[ 2026-06-12 15:36:12,035] 53 root -INFO - Data Validation Started
+[ 2026-06-12 15:36:12,044] 51 root -INFO - Number of columns in dataframe: 31
+[ 2026-06-12 15:36:12,045] 51 root -INFO - Number of columns in dataframe: 31
+[ 2026-06-12 15:36:12,086] 71 root -INFO - Data Validation Completed
+[ 2026-06-12 15:36:12,086] 76 root -INFO - Data Transformation Started
+[ 2026-06-12 15:36:12,086] 50 root -INFO - entered initiate_data_transformation method of  DataTransformation class
+[ 2026-06-12 15:36:12,086] 52 root -INFO - starting data transformation
+[ 2026-06-12 15:36:12,094] 37 root -INFO - entered get_data_transformer_object method of transformation class
+[ 2026-06-12 15:36:12,095] 40 root -INFO - initialize KNNimputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2026-06-12 15:36:12,107] 65 root -INFO - Entered save_object method
+[ 2026-06-12 15:36:12,107] 72 root -INFO - Exited save_object method
+[ 2026-06-12 15:36:12,108] 94 root -INFO - Data Transformation Completed
+[ 2026-06-12 15:36:12,108] 99 root -INFO - Model Training Started
+[ 2026-06-12 15:36:12,108] 172 root -INFO - Loading transformed train and test arrays

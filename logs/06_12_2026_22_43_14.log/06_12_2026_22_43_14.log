@@ -1,0 +1,46 @@
+[ 2026-06-12 22:43:16,639] 161 numexpr.utils -INFO - NumExpr defaulting to 4 threads.
+[ 2026-06-12 22:43:25,474] 31 root -INFO - Data Ingestion Started
+[ 2026-06-12 22:43:25,475] 120 root -INFO - Started Data Ingestion
+[ 2026-06-12 22:43:25,475] 33 root -INFO - Reading data from MongoDB database: ADITYAAI, collection: NetworkData
+[ 2026-06-12 22:43:26,844] 48 root -INFO - Fetched 1000 rows and 31 columns from MongoDB
+[ 2026-06-12 22:43:26,856] 72 root -INFO - Data exported to feature store: Artifacts\06_12_2026_22_43_17\data_ingestion\feature_store\phishingData.csv
+[ 2026-06-12 22:43:26,858] 89 root -INFO - Performed train-test split on the dataframe
+[ 2026-06-12 22:43:26,867] 111 root -INFO - Exported train and test datasets successfully
+[ 2026-06-12 22:43:26,867] 133 root -INFO - Data Ingestion Completed
+[ 2026-06-12 22:43:26,868] 48 root -INFO - Data Ingestion Completed
+[ 2026-06-12 22:43:26,868] 53 root -INFO - Data Validation Started
+[ 2026-06-12 22:43:26,879] 51 root -INFO - Number of columns in dataframe: 31
+[ 2026-06-12 22:43:26,879] 51 root -INFO - Number of columns in dataframe: 31
+[ 2026-06-12 22:43:26,942] 71 root -INFO - Data Validation Completed
+[ 2026-06-12 22:43:26,942] 76 root -INFO - Data Transformation Started
+[ 2026-06-12 22:43:26,942] 91 root -INFO - Entered initiate_data_transformation method
+[ 2026-06-12 22:43:26,947] 103 root -INFO - Train DataFrame Shape: (800, 31)
+[ 2026-06-12 22:43:26,947] 107 root -INFO - Test DataFrame Shape: (200, 31)
+[ 2026-06-12 22:43:26,949] 135 root -INFO - Obtaining preprocessing object
+[ 2026-06-12 22:43:26,949] 58 root -INFO - Entered get_data_transformer_object method
+[ 2026-06-12 22:43:26,949] 66 root -INFO - KNN Imputer initialized with params: {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2026-06-12 22:43:26,949] 77 root -INFO - Pipeline created successfully
+[ 2026-06-12 22:43:26,962] 165 root -INFO - Saving transformed train array
+[ 2026-06-12 22:43:26,965] 174 root -INFO - Saving transformed test array
+[ 2026-06-12 22:43:26,966] 183 root -INFO - Saving preprocessing object
+[ 2026-06-12 22:43:26,966] 65 root -INFO - Entered save_object method
+[ 2026-06-12 22:43:26,968] 72 root -INFO - Exited save_object method
+[ 2026-06-12 22:43:26,970] 200 root -INFO - Data Transformation Artifact: DataTransformationArtifact(transformed_object_file_path='Artifacts\\06_12_2026_22_43_17\\data_transformation\\preprocessing.pkl', transformed_train_file_path='Artifacts\\06_12_2026_22_43_17\\data_transformation\\train.npy', transformed_test_file_path='Artifacts\\06_12_2026_22_43_17\\data_transformation\\test.npy')
+[ 2026-06-12 22:43:26,971] 94 root -INFO - Data Transformation Completed
+[ 2026-06-12 22:43:26,972] 99 root -INFO - Model Training Started
+[ 2026-06-12 22:43:26,972] 221 root -INFO - Loading transformed train and test arrays
+[ 2026-06-12 22:43:26,973] 117 root -INFO - Evaluating models
+[ 2026-06-12 22:43:39,191] 142 root -INFO - Random Forest Train Score: 1.0 Test Score: 0.6167436533689635
+[ 2026-06-12 22:43:39,279] 142 root -INFO - Decision Tree Train Score: 1.0 Test Score: 0.5924430479183033
+[ 2026-06-12 22:43:45,187] 142 root -INFO - Gradient Boosting Train Score: 0.5264127163280662 Test Score: 0.5830205278592375
+[ 2026-06-12 22:43:45,506] 142 root -INFO - Logistic Regression Train Score: 0.611327149321267 Test Score: 0.628430583501006
+[ 2026-06-12 22:43:58,465] 142 root -INFO - AdaBoost Train Score: 0.5706049991709502 Test Score: 0.618332426056977
+[ 2026-06-12 22:43:58,465] 128 root -INFO - Model Report : {'Random Forest': 0.6167436533689635, 'Decision Tree': 0.5924430479183033, 'Gradient Boosting': 0.5830205278592375, 'Logistic Regression': 0.628430583501006, 'AdaBoost': 0.618332426056977}
+[ 2026-06-12 22:43:58,465] 139 root -INFO - Best Model Found : Logistic Regression with score : 0.628430583501006
+[ 2026-06-12 22:45:18,652] 175 root -INFO - Train Metric : ClassificationMetricArtifact(f1_score=0.23384615384615384, precision_score=0.7037037037037037, recall_score=0.14022140221402213)
+[ 2026-06-12 22:45:18,652] 176 root -INFO - Test Metric : ClassificationMetricArtifact(f1_score=0.16901408450704225, precision_score=0.5, recall_score=0.1016949152542373)
+[ 2026-06-12 22:45:18,653] 65 root -INFO - Entered save_object method
+[ 2026-06-12 22:45:18,654] 72 root -INFO - Exited save_object method
+[ 2026-06-12 22:45:18,654] 209 root -INFO - Model Trainer Artifact : ModelTrainerArtifact(trained_model_file_path='Artifacts\\06_12_2026_22_43_17\\model_trainer\\trained_model\\model.pkl', train_metric_artifact=ClassificationMetricArtifact(f1_score=0.23384615384615384, precision_score=0.7037037037037037, recall_score=0.14022140221402213), test_metric_artifact=ClassificationMetricArtifact(f1_score=0.16901408450704225, precision_score=0.5, recall_score=0.1016949152542373))
+[ 2026-06-12 22:45:18,655] 246 root -INFO - Model training completed successfully
+[ 2026-06-12 22:45:18,656] 117 root -INFO - Model Training Completed

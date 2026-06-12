@@ -1,0 +1,23 @@
+[ 2026-06-12 15:23:42,945] 161 numexpr.utils -INFO - NumExpr defaulting to 4 threads.
+[ 2026-06-12 15:23:44,834] 31 root -INFO - Data Ingestion Started
+[ 2026-06-12 15:23:44,834] 120 root -INFO - Started Data Ingestion
+[ 2026-06-12 15:23:44,835] 33 root -INFO - Reading data from MongoDB database: ADITYAAI, collection: NetworkData
+[ 2026-06-12 15:23:45,262] 48 root -INFO - Fetched 1000 rows and 31 columns from MongoDB
+[ 2026-06-12 15:23:45,893] 72 root -INFO - Data exported to feature store: Artifacts\06_12_2026_15_23_43\data_ingestion\feature_store\phishingData.csv
+[ 2026-06-12 15:23:45,895] 89 root -INFO - Performed train-test split on the dataframe
+[ 2026-06-12 15:23:45,902] 111 root -INFO - Exported train and test datasets successfully
+[ 2026-06-12 15:23:45,903] 133 root -INFO - Data Ingestion Completed
+[ 2026-06-12 15:23:45,903] 48 root -INFO - Data Ingestion Completed
+[ 2026-06-12 15:23:45,903] 53 root -INFO - Data Validation Started
+[ 2026-06-12 15:23:45,913] 51 root -INFO - Number of columns in dataframe: 31
+[ 2026-06-12 15:23:45,913] 51 root -INFO - Number of columns in dataframe: 31
+[ 2026-06-12 15:23:45,951] 71 root -INFO - Data Validation Completed
+[ 2026-06-12 15:23:45,951] 76 root -INFO - Data Transformation Started
+[ 2026-06-12 15:23:45,951] 50 root -INFO - entered initiate_data_transformation method of  DataTransformation class
+[ 2026-06-12 15:23:45,951] 52 root -INFO - starting data transformation
+[ 2026-06-12 15:23:45,960] 37 root -INFO - entered get_data_transformer_object method of transformation class
+[ 2026-06-12 15:23:45,960] 40 root -INFO - initialize KNNimputer with {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+[ 2026-06-12 15:23:45,968] 54 root -INFO - Entered the save_object method of MainUtils class
+[ 2026-06-12 15:23:45,969] 61 root -INFO - Exited the save_object method of MainUtils class
+[ 2026-06-12 15:23:45,969] 94 root -INFO - Data Transformation Completed
+[ 2026-06-12 15:23:45,969] 99 root -INFO - Model Training Started
