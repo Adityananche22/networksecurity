@@ -1,0 +1,14 @@
+[ 2026-06-12 12:40:03,828] 161 numexpr.utils -INFO - NumExpr defaulting to 4 threads.
+[ 2026-06-12 12:40:26,734] 30 root -INFO - Initiating Data Ingestion
+[ 2026-06-12 12:40:26,735] 120 root -INFO - Started Data Ingestion
+[ 2026-06-12 12:40:26,735] 33 root -INFO - Reading data from MongoDB database: ADITYAAI, collection: NetworkData
+[ 2026-06-12 12:40:29,208] 48 root -INFO - Fetched 1000 rows and 31 columns from MongoDB
+[ 2026-06-12 12:40:29,439] 72 root -INFO - Data exported to feature store: Artifacts\06_12_2026_12_40_08\data_ingestion\feature_store\phishingData.csv
+[ 2026-06-12 12:40:29,450] 89 root -INFO - Performed train-test split on the dataframe
+[ 2026-06-12 12:40:29,464] 111 root -INFO - Exported train and test datasets successfully
+[ 2026-06-12 12:40:29,465] 133 root -INFO - Data Ingestion Completed
+[ 2026-06-12 12:40:29,485] 48 root -INFO - Initiating Data Validation
+[ 2026-06-12 12:40:29,521] 51 root -INFO - Number of columns in dataframe: 31
+[ 2026-06-12 12:40:29,521] 51 root -INFO - Number of columns in dataframe: 31
+[ 2026-06-12 12:40:29,592] 54 root -INFO - Data Validation Completed
+[ 2026-06-12 12:40:29,592] 58 root -INFO - data transformation started
