@@ -1,0 +1,7 @@
+[ 2026-06-13 15:45:53,819] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:45:53,833] 107 dagshub -INFO - Accessing as Adityananche22
+[ 2026-06-13 15:45:57,748] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/Adityananche22/networksecurity "HTTP/1.1 200 OK"
+[ 2026-06-13 15:45:58,456] 1025 httpx -INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+[ 2026-06-13 15:45:58,456] 107 dagshub -INFO - Initialized MLflow to track repo "Adityananche22/networksecurity"
+[ 2026-06-13 15:45:58,456] 107 dagshub -INFO - Repository Adityananche22/networksecurity initialized!
+[ 2026-06-13 15:45:59,389] 84 root -WARNING - Model files not found in final_model folder yet.

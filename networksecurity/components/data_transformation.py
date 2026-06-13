@@ -68,7 +68,7 @@ class DataTransformation:
                 f"{DATA_TRANSFORMATION_IMPUTER_PARAMS}"
             )
 
-            processor = Pipeline(
+            preprocessing_obj = Pipeline(
                 steps=[
                     ("imputer", imputer)
                 ]
@@ -78,7 +78,7 @@ class DataTransformation:
                 "Pipeline created successfully"
             )
 
-            return processor
+            return preprocessing_obj
 
         except Exception as e:
             raise NetworkSecurityException(e, sys)
@@ -108,29 +108,31 @@ class DataTransformation:
                 f"Test DataFrame Shape: {test_df.shape}"
             )
 
+            # =========================
             # Train Data
+            # =========================
+
             input_feature_train_df = train_df.drop(
                 columns=[TARGET_COLUMN],
                 axis=1
             )
 
-            target_feature_train_df = train_df[TARGET_COLUMN]
+            target_feature_train_df = train_df[
+                TARGET_COLUMN
+            ].replace(-1, 0)
 
-            target_feature_train_df = (
-                target_feature_train_df.replace(-1, 0)
-            )
-
+            # =========================
             # Test Data
+            # =========================
+
             input_feature_test_df = test_df.drop(
                 columns=[TARGET_COLUMN],
                 axis=1
             )
 
-            target_feature_test_df = test_df[TARGET_COLUMN]
-
-            target_feature_test_df = (
-                target_feature_test_df.replace(-1, 0)
-            )
+            target_feature_test_df = test_df[
+                TARGET_COLUMN
+            ].replace(-1, 0)
 
             logging.info(
                 "Obtaining preprocessing object"
@@ -140,10 +142,18 @@ class DataTransformation:
                 self.get_data_transformer_object()
             )
 
+            logging.info(
+                "Applying preprocessing on train data"
+            )
+
             transformed_input_train_feature = (
                 preprocessing_obj.fit_transform(
                     input_feature_train_df
                 )
+            )
+
+            logging.info(
+                "Applying preprocessing on test data"
             )
 
             transformed_input_test_feature = (
@@ -186,6 +196,17 @@ class DataTransformation:
 
             save_object(
                 file_path=self.data_transformation_config.transformed_object_file_path,
+                obj=preprocessing_obj
+            )
+
+            # Save preprocessor separately
+            os.makedirs(
+                "models_final",
+                exist_ok=True
+            )
+
+            save_object(
+                file_path="models_final/preprocessor.pkl",
                 obj=preprocessing_obj
             )
 
